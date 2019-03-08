@@ -4,6 +4,7 @@ import {ChartComponent} from './shared/app.chart';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import {MatCardModule} from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {MatCardModule} from '@angular/material/card';
   imports: [
     BrowserModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

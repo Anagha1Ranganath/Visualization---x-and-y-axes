@@ -1,0 +1,13 @@
+{
+   "route_1": [
+       { "node_Id": 1,
+         "node_X": 30,
+         "node_Y": 20 },
+       { "node_Id": 2,
+         "node_X": 10,
+         "node_Y": 50 },
+        { "node_Id": 3,
+          "node_X": 40,
+          "node_Y": 10 }
+       ]
+}

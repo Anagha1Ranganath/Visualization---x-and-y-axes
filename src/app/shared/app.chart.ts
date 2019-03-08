@@ -1,4 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 declare var zingchart: any;
 
@@ -9,7 +11,13 @@ declare var zingchart: any;
   })
 
 export class ChartComponent implements AfterViewInit {
+  
+    private url: 'http://localhost:3000/Chart';
 
+    constructor( private Http: HttpClient) {
+
+    }
+    // chart: Chart =
     chart: Chart = {
         id: "chart-1",
         data: {
@@ -130,7 +138,7 @@ export class ChartComponent implements AfterViewInit {
                   },
                   "series":[
                       {
-                          "values":[[0, 69],[20,68],[30, 54],48,70,74,98,70,72,68,49,69],
+                          "values":[[0, 69],[20,68],[30, 54],[48,70],[74,98],[70,72],[68,49]],
                           "text":"Route 1",
                           "line-color":"#4dbac0",
                           "line-width":"2px",
@@ -143,54 +151,56 @@ export class ChartComponent implements AfterViewInit {
                               "shadow":0
                           },
                           "palette":0
-                      },
-                      {
-                          "values":[51,53,47,60,48,52,75,52,55,47,60,48],
-                          "text":"Route 2",
-                          "line-width":"2px",
-                          "line-color":"#660000",
-                          "shadow":0,
-                          "marker":{
-                              "background-color":"#fff",
-                              "size":3,
-                              "border-width":1,
-                              "border-color":"#660000",
-                              "shadow":0
-                          },
-                          "palette":1,
-                          "visible":1
-                      },
-                      {
-                          "values":[42,43,30,50,31,48,55,46,48,32,50,38],
-                          "text":"Route 3",
-                          "line-color":"#ad6bae",
-                          "line-width":"2px",
-                          "shadow":0,
-                          "marker":{
-                              "background-color":"#fff",
-                              "size":3,
-                              "border-width":1,
-                              "border-color":"#975098",
-                              "shadow":0
-                          },
-                          "palette":2,
-                          "visible":1
-                      },
-                      {
-                          "values":[25,15,26,21,24,26,33,25,15,25,22,24],
-                          "text":"Route 4",
-                          "line-color":"#f3950d",
-                          "line-width":"2px",
-                          "shadow":0,
-                          "marker":{
-                              "background-color":"#fff",
-                              "size":3,
-                              "border-width":1,
-                              "border-color":"#d37e04",
-                              "shadow":0
-                          },
-                          "palette":3
                       }
+                    //   ,
+                    //   {
+                    //       "values":[51,53,47,60,48,52,75,52,55,47,60,48],
+                    //       "text":"Route 2",
+                    //       "line-width":"2px",
+                    //       "line-color":"#660000",
+                    //       "shadow":0,
+                    //       "marker":{
+                    //           "background-color":"#fff",
+                    //           "size":3,
+                    //           "border-width":1,
+                    //           "border-color":"#660000",
+                    //           "shadow":0
+                    //       },
+                    //       "palette":1,
+                    //       "visible":1
+                    //   }
+                    //   ,
+                    //   {
+                    //       "values":[42,43,30,50,31,48,55,46,48,32,50,38],
+                    //       "text":"Route 3",
+                    //       "line-color":"#ad6bae",
+                    //       "line-width":"2px",
+                    //       "shadow":0,
+                    //       "marker":{
+                    //           "background-color":"#fff",
+                    //           "size":3,
+                    //           "border-width":1,
+                    //           "border-color":"#975098",
+                    //           "shadow":0
+                    //       },
+                    //       "palette":2,
+                    //       "visible":1
+                    //   },
+                    //   {
+                    //       "values":[25,15,26,21,24,26,33,25,15,25,22,24],
+                    //       "text":"Route 4",
+                    //       "line-color":"#f3950d",
+                    //       "line-width":"2px",
+                    //       "shadow":0,
+                    //       "marker":{
+                    //           "background-color":"#fff",
+                    //           "size":3,
+                    //           "border-width":1,
+                    //           "border-color":"#d37e04",
+                    //           "shadow":0
+                    //       },
+                    //       "palette":3
+                    //   }
                   ]
               }
           ]
@@ -202,19 +212,18 @@ export class ChartComponent implements AfterViewInit {
       ngAfterViewInit() {
         zingchart.render(this.chart);
       }
-    
+
       ChangeChartValue (value) {
         zingchart.exec('chart-1', 'setseriesvalues', {
           plotindex : 0,
           values : [Number(value)]
       });
    }
-   
 }
 
 interface Chart {
-    id:string;
-    data : {};
-    height : number;
-    width : number;
+    id: string;
+    data: {};
+    height: number;
+    width: number;
    }
