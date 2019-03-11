@@ -1,13 +1,186 @@
-{
-   "route_1": [
-       { "node_Id": 1,
-         "node_X": 30,
-         "node_Y": 20 },
-       { "node_Id": 2,
-         "node_X": 10,
-         "node_Y": 50 },
-        { "node_Id": 3,
-          "node_X": 40,
-          "node_Y": 10 }
-       ]
-}
+[
+  {
+      "vehId": 1,
+      "Route": [
+          {
+              "nodeId": 0,
+              "node_X": 50,
+              "node_Y": 50,
+              "demand": 0,
+              "isRouted": false,
+              "routed": false,
+              "depot": true
+          },
+          {
+              "nodeId": 5,
+              "node_X": 45,
+              "node_Y": 23,
+              "demand": 20,
+              "isRouted": true,
+              "routed": true,
+              "depot": false
+          },
+          {
+              "nodeId": 2,
+              "node_X": 83,
+              "node_Y": 76,
+              "demand": 20,
+              "isRouted": true,
+              "routed": true,
+              "depot": false
+          },
+          {
+              "nodeId": 1,
+              "node_X": 78,
+              "node_Y": 89,
+              "demand": 20,
+              "isRouted": true,
+              "routed": true,
+              "depot": false
+          },
+          {
+              "nodeId": 4,
+              "node_X": 78,
+              "node_Y": 92,
+              "demand": 20,
+              "isRouted": true,
+              "routed": true,
+              "depot": false
+          },
+          {
+              "nodeId": 0,
+              "node_X": 50,
+              "node_Y": 50,
+              "demand": 0,
+              "isRouted": false,
+              "routed": false,
+              "depot": true
+          }
+      ],
+      "capacity": 100,
+      "load": 80,
+      "curLoc": 0,
+      "closed": false,
+      "route": [
+          {
+              "nodeId": 0,
+              "node_X": 50,
+              "node_Y": 50,
+              "demand": 0,
+              "isRouted": false,
+              "routed": false,
+              "depot": true
+          },
+          {
+              "nodeId": 5,
+              "node_X": 45,
+              "node_Y": 23,
+              "demand": 20,
+              "isRouted": true,
+              "routed": true,
+              "depot": false
+          },
+          {
+              "nodeId": 2,
+              "node_X": 83,
+              "node_Y": 76,
+              "demand": 20,
+              "isRouted": true,
+              "routed": true,
+              "depot": false
+          },
+          {
+              "nodeId": 1,
+              "node_X": 78,
+              "node_Y": 89,
+              "demand": 20,
+              "isRouted": true,
+              "routed": true,
+              "depot": false
+          },
+          {
+              "nodeId": 4,
+              "node_X": 78,
+              "node_Y": 92,
+              "demand": 20,
+              "isRouted": true,
+              "routed": true,
+              "depot": false
+          },
+          {
+              "nodeId": 0,
+              "node_X": 50,
+              "node_Y": 50,
+              "demand": 0,
+              "isRouted": false,
+              "routed": false,
+              "depot": true
+          }
+      ]
+  },
+  {
+      "vehId": 2,
+      "Route": [
+          {
+              "nodeId": 0,
+              "node_X": 50,
+              "node_Y": 50,
+              "demand": 0,
+              "isRouted": false,
+              "routed": false,
+              "depot": true
+          },
+          {
+              "nodeId": 3,
+              "node_X": 33,
+              "node_Y": 96,
+              "demand": 40,
+              "isRouted": true,
+              "routed": true,
+              "depot": false
+          },
+          {
+              "nodeId": 0,
+              "node_X": 50,
+              "node_Y": 50,
+              "demand": 0,
+              "isRouted": false,
+              "routed": false,
+              "depot": true
+          }
+      ],
+      "capacity": 100,
+      "load": 40,
+      "curLoc": 0,
+      "closed": false,
+      "route": [
+          {
+              "nodeId": 0,
+              "node_X": 50,
+              "node_Y": 50,
+              "demand": 0,
+              "isRouted": false,
+              "routed": false,
+              "depot": true
+          },
+          {
+              "nodeId": 3,
+              "node_X": 33,
+              "node_Y": 96,
+              "demand": 40,
+              "isRouted": true,
+              "routed": true,
+              "depot": false
+          },
+          {
+              "nodeId": 0,
+              "node_X": 50,
+              "node_Y": 50,
+              "demand": 0,
+              "isRouted": false,
+              "routed": false,
+              "depot": true
+          }
+      ]
+  }
+]

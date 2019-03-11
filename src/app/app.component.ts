@@ -1,34 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import { ChartComponent } from './shared/app.chart';
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers:[ChartComponent]
+  // providers:[ChartComponent]
 })
 
-export class AppComponent implements OnInit{
-  weight : number;
-  height : number;
-  bmi : string;
+export class AppComponent {
 
-  constructor(private chartComponent : ChartComponent){}
+  user = this.fb.group ({
 
-  ngOnInit() {
-    this.weight = 0;
-    this.height = 0;
+    vehId: ['', Validators.required],
+    // node_Id: ['', Validators.required],
+    // node_X: ['', Validators.required],
+    // node_Y: ['', Validators.required]
+
+  });
+
+  constructor(private fb: FormBuilder, private appService: AppService) {}
+
+  app() {
+    this.appService.plot(this.user.value)
+    .subscribe( res => {
+      console.log('Res: ', res);
+    });
   }
 
-  onValueChange() {
-    var bmi = (this.weight / ((this.height / 100) * (this.height / 100)));
-    if (isNaN(bmi) || bmi < 10)
-      bmi = 10;
-    else if (bmi > 40)
-      bmi = 40;
-    this.bmi = bmi.toFixed(2);
-    this.chartComponent.ChangeChartValue(this.bmi);
-  }
 }
 
 
